@@ -29,14 +29,46 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+/// 
+Class, Constructor, Render/Return.
+First, import `{Component}` from 'react' at the beginning of your component file, then on the class component, add "`extends Component`" to the class, then inside of the component, add a `constructor()` within the {}, put a `super()` to inherit from the parent class and have acces to `this`, and then a `this.state = {}` to set the state.
+One the constructor is set, write a `render()` and `return` your JSX inside of the render. 
+///
 
 2. Describe the different phases of the component lifecycle.
+/// 
+Mounting (Birth) -> Updating (Life) -> Unmounting (Death)
+
+Mounting initializes the state of the component and binds methods to the class.
+Updating changes the state of the component with setState or new props being added (causing the component to render again).
+Unmounting comes at the end when the component removes what was added to it. 
+///
 
 3. Demonstrate an understanding of class component lifecycle methods.
+///
+Mounting: 
+- componentDidMount (cDM) is used to mount the component to the DOM and sets the initial state.
+Updating:
+- componentDidUnmount (cDU) fetches new data from changes in the component's state.
+Unmounting:
+- componentWillUnmount (cWU) cleans up and removes the state changes and reinitializes the component. 
+///
 
 4. Define stateful logic.
+///
+Stateful logic is used in the changing/updating of a component with event handlers to reconfigure the state of the component. 
+///
 
 5. Describe how to test a React component with React Testing Library.
+///
+Run the command `npm test` in a node terminal. This checks on your "test suites" (any file with `.test.js` in the file name), and reads the code inside of that directory pertaining to `test()` functions. The `test()` function takes two arguments, the first should be a string to describe what you're testing, the second needs to be a callback function that is used inside of the test.
+The steps are: Arrange, Act, and Assert.
+Arrange means you render the element you're testing into a virtual DOM,
+Act means you use query methods to target specific nodes by searching with the specific properties they contain,
+and Assert means you're testing whether or not that the selected node has been rendered based on the expectation (`expect().toBeInTheDocument()`) your test sets forth. 
+
+It is considered best practice to run "sanity checks" by purposefully failing these tests to make sure they're doing what you want them to do in order to maintain high quality functionality of your code. 
+///
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
